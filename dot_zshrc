@@ -1,0 +1,14 @@
+if [[ $USERNAME == "cwyenberg" ]]
+  then 
+    fastfetch --logo ~/.config/fastfetch/logo/ascii-art-cwyenberg.txt
+  else
+    fastfetch --logo ~/.config/fastfetch/logo/ascii-art-williamcarey.txt
+fi 
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
+alias config='/usr/bin/git --git-dir=/Users/cwyenberg/.cfg/ --work-tree=/Users/cwyenberg'
+eval "$(starship init zsh)"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[command]='fg=#00ff00'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#ffa500'
+some words
