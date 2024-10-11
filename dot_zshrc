@@ -3,3 +3,4 @@ eval "$(starship init zsh)"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[command]='fg=#00ff00'
 ZSH_HIGHLIGHT_STYLES[path]='fg=#ffa500'
+# Look at my bottom
