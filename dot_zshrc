@@ -4,3 +4,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[command]='fg=#00ff00'
 ZSH_HIGHLIGHT_STYLES[path]='fg=#ffa500'
 # OH NO! SNAKES!
+alias careymini='ssh careymini@192.168.10.218'
+alias ls='eza'
