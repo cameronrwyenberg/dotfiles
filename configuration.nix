@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       <home-manager/nixos>
+      "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/apple/t2"
     ];
 
   # Bootloader.
@@ -94,7 +95,6 @@
     rustup
     rust-analyzer
     gcc
-    python313Packages.pip
     python313Packages.python-lsp-ruff
   ];
 

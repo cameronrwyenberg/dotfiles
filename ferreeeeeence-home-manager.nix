@@ -7,6 +7,133 @@ with lib.hm.gvariant;
 	programs.fzf.enable = true;
 	programs.yazi = {
 		enable = true;
+		theme = {
+			mgr = {
+				cwd = { fg = "#CECDC3"; bold = true; }; 
+				hovered = { bg = "#1C1B1A"; }; # bg-2
+				preview_hovered = { underline = true; };
+				find_keyword = { fg = "#AD8301"; reversed = true; }; # ye-2
+				find_position = { fg = "#575653"; bold = true; italic = true; }; # tx-3
+				marker_copied = { fg = "#879A39"; bg = "#879A39"; }; # gr, gr
+				marker_cut = { fg = "#D14D41"; bg = "#D14D41"; }; # re, re
+				marker_marked = { fg = "#1C6C66"; bg = "#1C6C66"; }; # cy-700, cy-700
+				marker_selected = { fg = "#3AA99F"; bg = "#3AA99F"; }; # cy, cy
+				count_copied = { fg = "#879A39"; bold = true; reversed = true; }; # gr
+				count_cut = { fg = "#D14D41"; bold = true; reversed = true; }; # re
+				count_selected = { fg = "#3AA99F"; bold = true; reversed = true; }; # cy
+				border_symbol = "│";
+				border_style = { fg = "#282726"; }; # ui
+			};
+
+			tabs = {
+				active = { fg = "#CECDC3"; bg = "#403E3C"; bold = true; }; # tx, ui-3
+				inactive = { fg = "#878580"; bg = "#282726"; }; # tx-2, ui
+				sep_inner = { open = ""; close = ""; };
+				sep_outer = { open = ""; close = ""; };
+			};
+
+			mode = {
+				normal_main = { fg = "#CECDC3"; bg = "#403E3C"; bold = true; }; # tx, ui-3
+				normal_alt = { fg = "#878580"; bg = "#282726"; }; # tx-2, ui
+				select_main = { fg = "#100F0F"; bg = "#3AA99F"; bold = true; }; # bg, cy
+				select_alt = { fg = "#3AA99F"; bg = "#122F2C"; }; # cy, cy-900
+				unset_main = { fg = "#100F0F"; bg = "#3AA99F"; bold = true; }; # bg, cy
+				unset_alt = { fg = "#3AA99F"; bg = "#122F2C"; }; # cy, cy-900
+			};
+
+			status = {
+				overall = { fg = "#CECDC3"; }; # tx
+				perm_type = { fg = "#4385BE"; }; # bl
+				perm_read = { fg = "#D0A215"; }; # ye
+				perm_write = { fg = "#D14D41"; }; # re
+				perm_exec = { fg = "#879A39"; }; # gr
+				perm_sep = { fg = "#878580"; }; # tx-2
+				progress_label = { fg = "#100F0F"; }; # bg
+				progress_normal = { fg = "#3AA99F"; bg = "#1C6C66"; }; # cy, cy-700
+				progress_error = { bg = "#D14D41"; }; # re
+			};
+
+			which = {
+				cols = 3;
+				mask = { bg = "#1C1B1A"; }; # bg-2
+				cand = { fg = "#D0A215"; bold = true; }; # ye
+				rest = { fg = "#D0A215"; italic = true; }; # ye
+				desc = { fg = "#575653"; }; # tx-3
+				separator = " ";
+				separator_style = { };
+			};
+
+			confirm = {
+				border = { fg = "#403E3C"; }; # ui-3
+				title = { fg = "#575653"; bold = true; }; # tx-3
+				content = { fg = "#CECDC3"; bold = true; }; # tx
+				list = { fg = "#CECDC3"; }; # tx
+				btn_yes = { fg = "#CECDC3"; bg = "#403E3C"; bold = true; }; # tx, ui-3
+				btn_no = { fg = "#878580"; bg = "#282726"; }; # tx-2, ui
+			};
+
+			spot = {
+				border = { fg = "#403E3C"; }; # ui-3
+				title = { fg = "#575653"; bold = true; }; # tx-3
+				tbl_col = { fg = "#878580"; }; # tx-2
+				tbl_cell = { bg = "#1C1B1A"; }; # bg-2
+			};
+
+			notify = {
+				title_info = { fg = "#4385BE"; }; # bl
+				title_warn = { fg = "#DA702C"; }; # or
+				title_error = { fg = "#D14D41"; }; # re
+			};
+
+			pick = {
+				border = { fg = "#403E3C"; bold = true;};# ui-3
+				active = { fg = "#CECDC3";};# tx
+				inactive = { fg = "#878580";};# tx-2
+			};
+
+			input = {
+				border = { fg = "#403E3C";};# ui-3
+				title = { fg = "#575653"; bold = true;};# tx-3
+				value = { fg = "#CECDC3";};# tx
+				selected = { bg = "#1C1B1A";};# bg-2
+			};
+
+			cmp = {
+				border = { fg = "#403E3C"; bold = true;};# ui-3
+				active = { fg = "#878580"; bg = "#1C1B1A";};# tx-2, bg-2
+				inactive = { fg = "#878580";};# tx-2
+			};
+
+			tasks = {
+				border = { fg = "#403E3C";};# ui-3
+				title = { fg = "#575653"; bold = true;};# tx-3
+				hovered = { bg = "#1C1B1A";};# bg-2
+			};
+
+			help = {
+				on = { fg = "#4385BE";};# bl
+				run = { fg = "#3AA99F";};# cy
+				desc = { fg = "#575653"; italic = true;};# tx-3
+				hovered = { bg = "#1C1B1A";};# bg-2
+				footer = { fg = "#CECDC3"; bg = "#282726"; bold = true;};# tx, ui
+			};
+			
+			filetype = {
+				rules = [
+  					{ mime = "image/*"; fg = "#8B7EC8";} # pu
+  					{ mime = "video/*"; fg = "#D0A215";} # ye
+  					{ mime = "audio/*"; fg = "#D0A215";} # ye
+  					{ name = "*"; is = "orphan"; fg = "#575653"; crossed = true;} # tx-3
+  					{ name = "*/"; is = "orphan"; fg = "#575653"; crossed = true;} # tx-3
+  					{ name = "*"; is = "link"; fg = "#3AA99F";} # cy
+  					{ name = "*/"; is = "link"; fg = "#3AA99F";} # cy
+  					{ name = "*"; is = "exec"; fg = "#879A39";} # gr
+  					{ mime = "inode/empty"; fg = "#575653";} # tx-3
+  					{ name = "*"; fg = "#878580";} # tx-2
+  					{ name = "*/"; fg = "#CECDC3";} # tx
+				];
+			};
+		};
 	};
 	programs.git = {
 		enable = true;
@@ -26,6 +153,7 @@ with lib.hm.gvariant;
 		themeFile = "flexoki_dark";
 		settings = {
 			shell = ".";
+			hide_window_decorations = "yes";
 		};
 		font.name = "Hack Nerd Font";
 	};
@@ -541,134 +669,176 @@ with lib.hm.gvariant;
 	dconf = {
 		enable = true;
 		settings = {
-		    "org/gnome/Connections" = {
-		      first-run = false;
-		    };
-		
-		    "org/gnome/Console" = {
-		      last-window-maximised = false;
-		      last-window-size = mkTuple [ 732 528 ];
-		    };
-		
-		    "org/gnome/Extensions" = {
-		      window-height = 1032;
-		      window-width = 1904;
-		    };
-		
-		    "org/gnome/control-center" = {
-		      last-panel = "system";
-		      window-state = mkTuple [ 957 521 false ];
-		    };
-		
-		    "org/gnome/desktop/app-folders" = {
-		      folder-children = [ "System" "Utilities" "YaST" "Pardus" ];
-		    };
-		
-		    "org/gnome/desktop/app-folders/folders/Pardus" = {
-		      categories = [ "X-Pardus-Apps" ];
-		      name = "X-Pardus-Apps.directory";
-		      translate = true;
-		    };
-		
-		    "org/gnome/desktop/app-folders/folders/System" = {
-		      apps = [ "org.gnome.baobab.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.Logs.desktop" "org.gnome.SystemMonitor.desktop" ];
-		      name = "X-GNOME-Shell-System.directory";
-		      translate = true;
-		    };
-
-		    "org/gnome/desktop/app-folders/folders/Utilities" = {
-		      apps = [ "org.gnome.Connections.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.font-viewer.desktop" "org.gnome.Loupe.desktop" "org.gnome.seahorse.Application.desktop" ];
-		      name = "X-GNOME-Shell-Utilities.directory";
-		      translate = true;
-		    };
-		
-		    "org/gnome/desktop/app-folders/folders/YaST" = {
-		      categories = [ "X-SuSE-YaST" ];
-		      name = "suse-yast.directory";
-		      translate = true;
-		    };
-		
-		    "org/gnome/desktop/background" = {
-		      primary-color = "#3a4ba0";
-		      secondary-color = "#2f302f";
-		    };
-		
-		    "org/gnome/desktop/input-sources" = {
-		      sources = [ (mkTuple [ "xkb" "us" ]) ];
-		      xkb-options = [ "caps:escape_shifted_capslock" "altwin:swap_alt_win"];
-		    };
-		
-		    "org/gnome/desktop/interface" = {
-		      clock-format = "12h";
-		      clock-show-weekday = true;
-		      color-scheme = "prefer-dark";
-		    };
-		
-		    "org/gnome/desktop/notifications" = {
-		      application-children = [ "gnome-power-panel" ];
-		    };
-		
-		    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
-		      application-id = "gnome-power-panel.desktop";
-		    };
-		
-		    "org/gnome/desktop/peripherals/mouse" = {
-		      natural-scroll = true;
-		    };
-		
-		    "org/gnome/desktop/peripherals/touchpad" = {
-		      two-finger-scrolling-enabled = true;
-		    };
-		
-		    "org/gnome/desktop/screensaver" = {
-		      color-shading-type = "solid";
-		      picture-options = "zoom";
-		      picture-uri = "file:///nix/store/ns9zmifhhrnpfc2r83kv0gnl2ni85byd-simple-blue-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
-		      primary-color = "#3a4ba0";
-		      secondary-color = "#2f302f";
-		    };
-
-		    "org/gnome/epiphany/state" = {
-		      is-maximized = false;
-		      window-size = mkTuple [ 1024 768 ];
-		    };
-		
-		    "org/gnome/evolution-data-server" = {
-		      migrated = true;
-		    };
-		
-		    "org/gnome/nautilus/preferences" = {
-		      default-folder-viewer = "icon-view";
-		      migrated-gtk-settings = true;
-		      search-filter-time-type = "last_modified";
-		    };
-		
-		    "org/gnome/nautilus/window-state" = {
-		      initial-size = mkTuple [ 890 550 ];
-		      initial-size-file-chooser = mkTuple [ 890 550 ];
-		    };
-		
-		    "org/gnome/settings-daemon/plugins/color" = {
-		      night-light-schedule-automatic = false;
-		    };
-		
-		    "org/gnome/shell" = {
-		      enabled-extensions = [ ];
-		      welcome-dialog-last-shown-version = "48.2";
-		    };
-		
-		    "org/gnome/shell/world-clocks" = {
-		      locations = [];
-		    };
-		
-		    "org/gtk/gtk4/settings/color-chooser" = {
-		      custom-colors = [ (mkTuple [ 0.9254902005195618 0.3686274588108063 0.3686274588108063 1.0 ]) ];
-		      selected-color = mkTuple [ true 0.3843137323856354 0.6274510025978088 0.9176470637321472 1.0 ];
-		    };
-		
-		    "org/gtk/settings/file-chooser" = {
-		      clock-format = "12h";
-		    };
+			"org/gnome/Connections" = {
+			      first-run = false;
+			    };
+			
+			    "org/gnome/Console" = {
+			      last-window-maximised = false;
+			      last-window-size = mkTuple [ 732 528 ];
+			    };
+			
+			    "org/gnome/Extensions" = {
+			      window-height = 1032;
+			      window-width = 1904;
+			    };
+			
+			    "org/gnome/Music" = {
+			      window-maximized = true;
+			    };
+			
+			    "org/gnome/control-center" = {
+			      last-panel = "system";
+			      window-state = mkTuple [ 957 521 false ];
+			    };
+			
+			    "org/gnome/desktop/app-folders" = {
+			      folder-children = [ "System" "Utilities" "YaST" "Pardus" ];
+			    };
+			
+			    "org/gnome/desktop/app-folders/folders/Pardus" = {
+			      categories = [ "X-Pardus-Apps" ];
+			      name = "X-Pardus-Apps.directory";
+			      translate = true;
+			    };
+			
+			    "org/gnome/desktop/app-folders/folders/System" = {
+			      apps = [ "org.gnome.baobab.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.Logs.desktop" "org.gnome.SystemMonitor.desktop" ];
+			      name = "X-GNOME-Shell-System.directory";
+			      translate = true;
+			    };
+			
+			    "org/gnome/desktop/app-folders/folders/Utilities" = {
+			      apps = [ "org.gnome.Connections.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.font-viewer.desktop" "org.gnome.Loupe.desktop" "org.gnome.seahorse.Application.desktop" ];
+			      name = "X-GNOME-Shell-Utilities.directory";
+			      translate = true;
+			    };
+			
+			    "org/gnome/desktop/app-folders/folders/YaST" = {
+			      categories = [ "X-SuSE-YaST" ];
+			      name = "suse-yast.directory";
+			      translate = true;
+			    };
+			
+			    "org/gnome/desktop/background" = {
+			      primary-color = "#3a4ba0";
+			      secondary-color = "#2f302f";
+			    };
+			
+			    "org/gnome/desktop/input-sources" = {
+			      sources = [ (mkTuple [ "xkb" "us" ]) ];
+			      xkb-options = [ "caps:escape_shifted_capslock" ];
+			    };
+			
+			    "org/gnome/desktop/interface" = {
+			      clock-format = "12h";
+			      clock-show-weekday = true;
+			      color-scheme = "prefer-dark";
+			    };
+			
+			    "org/gnome/desktop/notifications" = {
+			      application-children = [ "gnome-power-panel" "org-gnome-nautilus" ];
+			    };
+			
+			    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
+			      application-id = "gnome-power-panel.desktop";
+			    };
+			
+			    "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
+			      application-id = "org.gnome.Nautilus.desktop";
+			    };
+			
+			    "org/gnome/desktop/notifications/application/org-qutebrowser-qutebrowser" = {
+			      application-id = "org.qutebrowser.qutebrowser.desktop";
+			    };
+			
+			    "org/gnome/desktop/peripherals/mouse" = {
+			      left-handed = false;
+			      natural-scroll = true;
+			    };
+			
+			    "org/gnome/desktop/peripherals/touchpad" = {
+			      two-finger-scrolling-enabled = true;
+			    };
+			
+			    "org/gnome/desktop/screensaver" = {
+			      color-shading-type = "solid";
+			      picture-options = "zoom";
+			      picture-uri = "file:///nix/store/ns9zmifhhrnpfc2r83kv0gnl2ni85byd-simple-blue-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
+			      primary-color = "#3a4ba0";
+			      secondary-color = "#2f302f";
+			    };
+			
+			    "org/gnome/epiphany/state" = {
+			      is-maximized = false;
+			      window-size = mkTuple [ 1024 768 ];
+			    };
+			
+			    "org/gnome/evolution-data-server" = {
+			      migrated = true;
+			    };
+			
+			    "org/gnome/file-roller/listing" = {
+			      list-mode = "as-folder";
+			      show-path = false;
+			      sort-method = "name";
+			      sort-type = "ascending";
+			    };
+			
+			    "org/gnome/file-roller/ui" = {
+			      sidebar-width = 200;
+			      window-height = 480;
+			      window-width = 600;
+			    };
+			
+			    "org/gnome/nautilus/preferences" = {
+			      default-folder-viewer = "icon-view";
+			      migrated-gtk-settings = true;
+			      search-filter-time-type = "last_modified";
+			    };
+			
+			    "org/gnome/nautilus/window-state" = {
+			      initial-size = mkTuple [ 890 550 ];
+			      initial-size-file-chooser = mkTuple [ 890 550 ];
+			    };
+			
+			    "org/gnome/settings-daemon/plugins/color" = {
+			      night-light-schedule-automatic = false;
+			    };
+			
+			    "org/gnome/shell" = {
+			      enabled-extensions = [];
+			      welcome-dialog-last-shown-version = "48.2";
+			    };
+			
+			    "org/gnome/shell/extensions/forge" = {
+			      window-gap-size-increment = mkUint32 1;
+			    };
+			
+			    "org/gnome/shell/world-clocks" = {
+			      locations = [];
+			    };
+			
+			    "org/gtk/gtk4/settings/color-chooser" = {
+			      custom-colors = [ (mkTuple [ 0.92549 0.368627 0.368627 1.0 ]) ];
+			      selected-color = mkTuple [ true 0.384314 0.627451 0.917647 1.0 ];
+			    };
+			
+			    "org/gtk/settings/file-chooser" = {
+			      clock-format = "12h";
+			      date-format = "regular";
+			      location-mode = "path-bar";
+			      show-hidden = false;
+			      show-size-column = true;
+			      show-type-column = true;
+			      sidebar-width = 167;
+			      sort-column = "name";
+			      sort-directories-first = false;
+			      sort-order = "ascending";
+			      type-format = "category";
+			      window-position = mkTuple [ 26 23 ];
+			      window-size = mkTuple [ 1231 902 ];
+			    };
 
 		};
 	};
